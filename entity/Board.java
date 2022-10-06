@@ -44,28 +44,6 @@ public class Board extends Timestamped {
         this.password = requestDto.getPassword();
     }
 
-
-//
-//    public Board(BoardResponseDto responseDto) {
-//        this.title = responseDto.getTitle();
-//        this.writer = responseDto.getWriter();
-//        this.id = responseDto.getId();
-//        this.content = responseDto.getContent();
-//    }
-
-
-
-    //게시글 생성
-//    public  void save(BoardRequestDto requestDto) {  //BoardRequestDto는 Board 객체에 변경하거나 새롭게 생성할 데이터를 담는 그릇
-//        this.title = requestDto.getTitle();
-//        this.writer = requestDto.getWriter();
-//        this.password = requestDto.getPassword();
-//        this.content = requestDto.getContent();
-//
-//    }
-
-
-
     //게시글 수정
     public void update(BoardRequestDto requestDto) {
         this.title = requestDto.getTitle();
