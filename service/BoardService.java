@@ -21,15 +21,6 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
 
-//////////게시글 작성
-//        @Transactional
-////        public Long createBoard(Long id, BoardRequestDto requestDto) {
-////            Board board1 = boardRepository.findById(id).orElseThrow(
-////                () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
-////        );
-////        board1.save(requestDto);
-////        return board1.getId();
-
 ////////////게시글 수정(update)
     @Transactional
     @ResponseStatus(code = HttpStatus.NOT_ACCEPTABLE, reason ="해당 아이디가 존재하지 않습니다." )
@@ -40,6 +31,7 @@ public class BoardService {
         board1.update(requestDto);
         return board1.getId();
     }
+    
     ///////////게시글 하나 조회
     @Transactional
     public BoardResponseDto findById (Long id) {
@@ -47,11 +39,7 @@ public class BoardService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다 id =" +id));
         return new BoardResponseDto(entity);
     }
-//////////게시글 삭제
-//    public Long deleteBoardId(Long id) {
-//    boardRepository.deleteById(id);
-//    return id;
-//}
+
 ////////////게시글 비밀번호 비교
 public boolean checkPassword(Long id, BoardRequestDto requsetDto) {
     //reposity에있는 id를 찾아서 post에 넣기
